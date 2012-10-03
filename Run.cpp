@@ -14,7 +14,7 @@ int main(int argc,char** argv)
    // struct *IcmpRecv;
     char *Buffer= new char(8);
    //string ipp[4]={"172","17","157","0"};
-    unsigned char ipp[4]={172,17,157,45}; //char型默认是有符号的，如果不声明unsigned，则下一步打印的结果是-84.是因为最大能存的正数是127
+    unsigned char ipp[4]={172,17,157,51}; //char型默认是有符号的，如果不声明unsigned，则下一步打印的结果是-84.是因为最大能存的正数是127
    // printf("%d\n",ipp[0]);
     int IcmpSocket;
     IcmpSocket=socket(AF_INET,SOCK_RAW,IPPROTO_ICMP);
@@ -50,7 +50,7 @@ int main(int argc,char** argv)
   int recv[255];
   char RecvBuf[255][1024];
  
-  for(i=45;i<55;i++)
+  for(i=51;i<52;i++)
  {
     struct IpHeader ip[255]; 
     struct IpHeader *ipcl=ip;
