@@ -33,7 +33,7 @@ int main(int argc,char** argv)
       {
          //int err;
           char *msg=strerror(errno);
-          printf("%d\n",errno);
+         
           printf("Mesg:%s\n",msg);
         printf("Set Timeout failed! \n");
         close(IcmpSocket);
@@ -79,6 +79,7 @@ int main(int argc,char** argv)
    if(send[i]==-1)
       {
           char *msg=strerror(errno);
+           printf("%d\n",errno);
           printf("Mesg:%s\n",msg);
         printf("Send to %s failed! \n",DestIp);
         close(IcmpSocket);
