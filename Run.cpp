@@ -15,8 +15,8 @@ int main(int argc,char** argv)
     char *Buffer;
    Buffer=new char(8);
    //string ipp[4]={"172","17","157","0"};
-    unsigned char ipp[4]={172,17,157,0};
-    printf("%d\n",ipp[0]);
+    unsigned char ipp[4]={172,17,157,0}; //char型默认是有符号的，如果不声明unsigned，则下一步打印的结果是-84.是因为最大能存的正数是127
+   // printf("%d\n",ipp[0]);
     int IcmpSocket;
     IcmpSocket=socket(AF_INET,SOCK_RAW,IPPROTO_ICMP);
     if (IcmpSocket==-1)
@@ -26,11 +26,10 @@ int main(int argc,char** argv)
         return -1;
       }
    /*设�超时属性，，如果目标主机不存再火灾关机，由于recvfrom()是阻塞性子的，它会一直等待数据到达，谷为了让程序能再次停止，设置词超时属性*/
- struct timeval *tv;
-tv=new timeval;
+   struct timeval *tv=new timeval;
  tv->tv_sec=1;
  tv->tv_usec=5000;
-  if(setsockopt(IcmpSocket,SOL_SOCKET,SO_RCVTIMEO,(struct timeval*)tv,sizeof(tv))!=0)
+  if(setsockopt(IcmpSocket,SOL_SOCKET,SO_RCVTIMEO,tv,sizeof(tv))!=0)//(struct timeval*)
       {
          //int err;
           char *msg=strerror(errno);
