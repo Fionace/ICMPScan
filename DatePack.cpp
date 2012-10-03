@@ -2,7 +2,7 @@
 using namespace std;
 extern unsigned short CheckSum(unsigned short,int);
 /*数据包构造函数*/
-bool ConstruPack(const char *Buffer,int flags)
+bool ConstruPack(char *Buffer,int flags)
 {
     //Icmppack=new IcmpHeader;
    switch(flags)
