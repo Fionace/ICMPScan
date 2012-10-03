@@ -41,8 +41,13 @@ int main(int argc,char** argv)
       printf("11111\n");
    /*构造发送的数据包*/
   ConstruPack(Buffer,2);
- //while(*Buffer)
-  //printf("%s",(char)*Buffer);
+  
+ while(*Buffer)
+  {
+      printf("%s",(struct IcmpHeader*)Buffer->Type);
+      printf("%d",(struct IcmpHeader*)Buffer->ID);
+  
+  }
     printf("222222\n");
    /*循环给同一子网内的机器发包*/
   int i;
