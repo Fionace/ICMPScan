@@ -21,7 +21,7 @@ int main(int argc,char** argv)
     IcmpSocket=socket(AF_INET,SOCK_RAW,IPPROTO_ICMP);
     if (IcmpSocket==-1)
       {
-        printf("Create the icmp socket failed! \n");
+        printf("Create the icmp socket failed! \n");                
         close(IcmpSocket);
         return -1;
       }
