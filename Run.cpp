@@ -42,13 +42,13 @@ int main(int argc,char** argv)
    /*构造发送的数据包*/
   ConstruPack(Buffer,2);
   
- while(*Buffer)
+ if(*Buffer)
   {
       struct IcmpHeader *icmpp;
       icmpp=(IcmpHeader*)Buffer;
       printf("aaaaaa\n");
-      printf("%d",icmpp->Type);
-      printf("%d",icmpp->ID);
+      printf("%d\n",icmpp->Type);
+      printf("%d\n",icmpp->ID);
   
   }
     printf("222222\n");
