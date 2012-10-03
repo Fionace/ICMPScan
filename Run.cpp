@@ -39,6 +39,7 @@ int main(int argc,char** argv)
         close(IcmpSocket);
         return -1;
       }
+      pringt
    /*构造发送的数据包*/
   ConstruPack(Buffer,2);
    /*循环给同一子网内的机器发包*/
