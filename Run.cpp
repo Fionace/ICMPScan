@@ -41,8 +41,8 @@ int main(int argc,char** argv)
       printf("11111\n");
    /*构造发送的数据包*/
   ConstruPack(Buffer,2);
- while(*Buffer)
-  printf("%s",(char)*Buffer);
+ //while(*Buffer)
+  //printf("%s",(char)*Buffer);
     printf("222222\n");
    /*循环给同一子网内的机器发包*/
   int i;
@@ -52,12 +52,15 @@ int main(int argc,char** argv)
  
   for(i=0;i<255;i++)
  {
-    struct IpHeader ip[255], *ipcl;
-   ipcl=ip;
-   struct IcmpHeader icmprecv[255],*icmpcl;
-   icmpcl=icmprecv;
-  char *DestIp;
+    struct IpHeader ip[255]; 
+    struct IpHeader *ipcl=ip;
+    //ipcl=ip;
+   struct IcmpHeader icmprecv[255];
+   struct IcmpHeader *icmpcl=icmprecv;
+   printf("333333\n");
+    unsigned char *DestIp;
     sprintf(DestIp,"%d.%d.%d.%d",ipp[0],ipp[1],ipp[2],ipp[3]);
+    printf("%s",DestIp);
     bzero(&DestAddr,sizeof(DestAddr));
     DestAddr.sin_addr.s_addr=inet_addr(DestIp);
     DestAddr.sin_family=AF_INET;
