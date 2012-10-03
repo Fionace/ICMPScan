@@ -14,8 +14,9 @@ int main(int argc,char** argv)
    // struct *IcmpRecv;
     char *Buffer;
    Buffer=new char(8);
-    char ipp[4]={"172","17","157","0"};
-    printf("%d\n",ipp[0]);
+   string ipp[4]={"172","17","157","0"};
+    //char ipp[4]={"172","17","157","0"};
+    printf("%d\n",（int）ipp[0]);
     int IcmpSocket;
     IcmpSocket=socket(AF_INET,SOCK_RAW,IPPROTO_ICMP);
     if (IcmpSocket==-1)
