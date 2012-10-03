@@ -43,7 +43,7 @@ int main(int argc,char** argv)
    /*构造发送的数据包*/
   ConstruPack(Buffer,2);
  while(*Buffer)
-  printf("%s",*Buffer);
+  printf("%s",(char)*Buffer);
     printf("222222\n");
    /*循环给同一子网内的机器发包*/
   int i;
