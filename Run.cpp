@@ -58,9 +58,10 @@ int main(int argc,char** argv)
    struct IcmpHeader icmprecv[255];
    struct IcmpHeader *icmpcl=icmprecv;
    printf("333333\n");
-    unsigned char *DestIp;
+    char *DestIpp;
     sprintf(DestIp,"%d.%d.%d.%d",ipp[0],ipp[1],ipp[2],ipp[3]);
-    printf("%s",DestIp);
+    printf("%s",DestIpp);
+    const char* DestIp=DestIpp;
     bzero(&DestAddr,sizeof(DestAddr));
     DestAddr.sin_addr.s_addr=inet_addr(DestIp);
     DestAddr.sin_family=AF_INET;
