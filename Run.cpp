@@ -12,7 +12,8 @@ int main(int argc,char** argv)
     Len=sizeof(addr);
     //struct IpHeader *ip;
    // struct *IcmpRecv;
-    char *Buffer=new char(8);
+    char *Buffer;
+    Buffer=new char(8);
    //string ipp[4]={"172","17","157","0"};
     unsigned char ipp[4]={172,17,157,0}; //char型默认是有符号的，如果不声明unsigned，则下一步打印的结果是-84.是因为最大能存的正数是127
    // printf("%d\n",ipp[0]);
@@ -41,6 +42,8 @@ int main(int argc,char** argv)
       printf("11111\n");
    /*构造发送的数据包*/
   ConstruPack(Buffer,2);
+ while(*Buffer)
+  printf("%s",*Buffer);
     printf("222222\n");
    /*循环给同一子网内的机器发包*/
   int i;
