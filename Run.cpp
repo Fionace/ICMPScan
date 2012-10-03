@@ -3,7 +3,7 @@
 #include<sys/time.h>
 #include <time.h>
 //#include"DatePack.h"
-extern bool ConstruPack(const char*,int);
+extern bool ConstruPack(char*,int); //声明
 //extern unsigned short CheckSum(unsigned short,int);
 int main(int argc,char** argv)
 {
@@ -12,9 +12,10 @@ int main(int argc,char** argv)
     Len=sizeof(addr);
     //struct IpHeader *ip;
    // struct *IcmpRecv;
-    const char *Buffer;
+    char *Buffer;
    Buffer=new char(8);
     char ipp[4]={172,17,157,0};
+    printf("%d\n",ipp[0]);
     int IcmpSocket;
     IcmpSocket=socket(AF_INET,SOCK_RAW,IPPROTO_ICMP);
     if (IcmpSocket==-1)
@@ -23,7 +24,7 @@ int main(int argc,char** argv)
         close(IcmpSocket);
         return -1;
       }
-   /*设�超时属性，，如果目标主机不存再火灾关机，由于recvfrom()是阻塞性子的，它会一直等待数据到达，谷为了让程序能再次停止，设置词超时属性*/
+   /*设�超时属性，，如果目标主机不存再火灾关机，由于recvfrom()是阻塞性子的，它会一直等待数据到达，谷为了让程序能再次停止，设置词超时属性*/
  struct timeval *tv;
 tv=new timeval;
  tv->tv_sec=1;
