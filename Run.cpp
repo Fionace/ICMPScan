@@ -59,7 +59,7 @@ int main(int argc,char** argv)
    struct IcmpHeader *icmpcl=icmprecv;
    printf("333333\n");
     char *DestIpp;
-    sprintf(DestIp,"%d.%d.%d.%d",ipp[0],ipp[1],ipp[2],ipp[3]);
+    sprintf(DestIpp,"%d.%d.%d.%d",ipp[0],ipp[1],ipp[2],ipp[3]);
     printf("%s",DestIpp);
     const char* DestIp=DestIpp;
     bzero(&DestAddr,sizeof(DestAddr));
