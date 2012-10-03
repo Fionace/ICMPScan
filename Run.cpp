@@ -44,8 +44,10 @@ int main(int argc,char** argv)
   
  while(*Buffer)
   {
-      printf("%s",(struct IcmpHeader*)Buffer->Type);
-      printf("%d",(struct IcmpHeader*)Buffer->ID);
+      struct IcmpHeader *icmpp;
+      icmpp=(IcmpHeader*)Buffer;
+      printf("%s",icmpp->Type);
+      printf("%d",icmpp->ID);
   
   }
     printf("222222\n");
