@@ -46,6 +46,7 @@ int main(int argc,char** argv)
   {
       struct IcmpHeader *icmpp;
       icmpp=(IcmpHeader*)Buffer;
+      printf("aaaaaa\n");
       printf("%s",icmpp->Type);
       printf("%d",icmpp->ID);
   
