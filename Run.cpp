@@ -27,8 +27,8 @@ int main(int argc,char** argv)
    /*设�超时属性，，如果目标主机不存再火灾关机，由于recvfrom()是阻塞性子的，它会一直等待数据到达，谷为了让程序能再次停止，设置词超时属性*/
    //struct timeval *tv=new timeval();
    struct timeval tv;
- tv.tv_sec=1;
- tv.tv_usec=5000;
+    tv.tv_sec=1;
+    tv.tv_usec=5000;
   if(setsockopt(IcmpSocket,SOL_SOCKET,SO_RCVTIMEO,&tv,sizeof(tv))!=0)//(struct timeval*)
       {
          //int err;
@@ -58,7 +58,7 @@ int main(int argc,char** argv)
    struct IcmpHeader icmprecv[255];
    struct IcmpHeader *icmpcl=icmprecv;
    printf("333333\n");
-    char *DestIpp;
+    char DestIpp[100];
     sprintf(DestIpp,"%d.%d.%d.%d",ipp[0],ipp[1],ipp[2],ipp[3]);
     printf("%s",DestIpp);
     const char* DestIp=DestIpp;
