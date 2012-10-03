@@ -28,8 +28,8 @@ int main(int argc,char** argv)
  struct timeval *tv;
 tv=new timeval;
  tv->tv_sec=1;
- tv->tv_usec=50000;
-  if(setsockopt(IcmpSocket,SOL_SOCKET,SO_RCVTIMEO,(struct timeval*)tv,sizeof(struct timeval))!=0)
+ tv->tv_usec=5000;
+  if(setsockopt(IcmpSocket,SOL_SOCKET,SO_RCVTIMEO,(struct timeval*)tv,sizeof(tv))!=0)
       {
          //int err;
           char *msg=strerror(errno);
